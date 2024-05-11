@@ -17,5 +17,8 @@ const style = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'white',
         padding: 12,
+        // FRANK NOTE can use both maxWidth and width 
+        maxWidth: '80%',
+        width: 300
     }
 })
