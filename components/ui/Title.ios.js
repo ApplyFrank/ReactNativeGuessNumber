@@ -1,4 +1,4 @@
-import { Text, StyleSheet} from "react-native";
+import { Text, StyleSheet, Platform} from "react-native";
 import Colors from "../../constants/colors";
 
 // FRANK NOTE create reusability by taking out the component
@@ -14,7 +14,8 @@ const style = StyleSheet.create({
         fontSize: 18,
         color: 'white',
         textAlign: 'center',
-        borderWidth: 2,
+        // borderWidth: Platform.OS === 'android' ? 2 : 0,
+        // borderWidth: Platform.select({ ios: 0, android: 2}), // a more readable way FRANK NOTE
         borderColor: 'white',
         padding: 12,
         // FRANK NOTE can use both maxWidth and width 

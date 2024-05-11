@@ -7,6 +7,7 @@ import GameOverScreen from './screens/GameOverScreen';
 import Colors from './constants/colors';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from 'react-native';
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -46,19 +47,23 @@ if (!fontsLoaded) {
   }
 
   return (
-    <LinearGradient colors={[Colors.primary800 ,Colors.accent500]} style={styles.rootScreen}>
-      <ImageBackground source={require('./assets/images/dice.jpg')}
-       resizeMode='cover' 
-       style={styles.rootScreen}
-       imageStyle={styles.backgroundImage}
-       >
-       {/*makes sure that all the available space besides the safearea is available for {screen} */}
-       <SafeAreaView style={styles.rootScreen}>
-        {screen}
-       </SafeAreaView>
-        
-      </ImageBackground>
-    </LinearGradient>
+    <>
+      <StatusBar style='light' />
+      <LinearGradient colors={[Colors.primary800 ,Colors.accent500]} style={styles.rootScreen}>
+        <ImageBackground source={require('./assets/images/dice.jpg')}
+        resizeMode='cover' 
+        style={styles.rootScreen}
+        imageStyle={styles.backgroundImage}
+        >
+        {/*makes sure that all the available space besides the safearea is available for {screen} */}
+        <SafeAreaView style={styles.rootScreen}>
+          {screen}
+        </SafeAreaView>
+          
+        </ImageBackground>
+      </LinearGradient>
+    </>
+
     
   );
 }
